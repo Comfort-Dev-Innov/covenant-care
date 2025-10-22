@@ -1,7 +1,9 @@
+import FAQ from "@/components/FAQ";
+
 export default function Home() {
   return (
     <div>
-      TEST
+      <FAQ />
     </div>
   );
 }
