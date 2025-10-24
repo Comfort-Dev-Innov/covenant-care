@@ -27,12 +27,12 @@ const OurStory = () => {
     ];
 
     return (
-        <div className="max-w-[1202px] mx-auto">
+        <div className="max-w-[1202px] mx-auto px-[10px] sm:px-[20px] md:px-[30px] min-[1202px]:px-0">
             <div className="flex flex-col items-center justify-center">
                 <h1 className="font-archivo-black text-center text-primary text-[24px] md:text-[54px]">
                     Our Story
                 </h1>
-                <p className="font-light font-inter text-[14px] md:text-[18px] mb-[36px] md:mb-[53px]">
+                <p className="font-light font-inter text-black text-center text-[14px] md:text-[18px] mb-[36px] md:mb-[53px]">
                     The story behind what we do and why we do it
                 </p>
             </div>

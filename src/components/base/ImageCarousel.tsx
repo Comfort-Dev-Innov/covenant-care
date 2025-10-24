@@ -97,7 +97,7 @@ export default function ImageCarousel({
         >
           {items.map((item, index) => (
             <div key={index} className="w-full flex-shrink-0 relative">
-              <div className="relative w-full h-96 md:h-[625px] rounded-[15px]">
+              <div className="relative w-full h-[625px] rounded-[15px]">
                 <Image
                   src={item.image}
                   alt={item.title}
@@ -109,11 +109,11 @@ export default function ImageCarousel({
                 <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent rounded-[15px]"></div>
 
                 {/* Title and Content Overlay */}
-                <div className="absolute px-15 bottom-22 left-14 right-14 md:left-8 md:right-8 text-white">
-                  <h2 className="text-2xl md:text-[64px] font-bold mb-3 font-inter">
+                <div className="absolute flex flex-col justify-between md:justify-start h-[500px] md:h-auto px-0 sm:px-6 md:px-15 bottom-20 md:bottom-22 left-10 md:left-14 right-14 md:left-8 md:right-8 text-white">
+                  <h2 className="text-[32px] md:text-[64px] font-bold mb-2 md:mb-3 font-inter">
                     {item.title}
                   </h2>
-                  <p className="whitespace-pre-line font-inter font-light text-sm md:text-[20px] opacity-90">
+                  <p className="whitespace-normal lg:whitespace-pre-line font-inter font-light text-[15px] md:text-[20px] opacity-90">
                     {item.content}
                   </p>
                 </div>
@@ -128,12 +128,12 @@ export default function ImageCarousel({
             {/* Left arrow */}
             <button
               disabled={isTransitioning}
-              className="absolute left-4 cursor-default top-1/2 transform -translate-y-1/2 text-white hover:text-white/50 pl-6 rounded-full transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="absolute left-4 cursor-default bottom-8 md:top-1/2 transform md:-translate-y-1/2 text-white hover:text-white/50 pl-6 rounded-full transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
               aria-label="Previous image"
             >
               <svg
                 onClick={goToPrevious}
-                className="w-10 h-10 cursor-pointer"
+                className="md:w-10 md:h-10 w-6 h-6 cursor-pointer"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -150,12 +150,12 @@ export default function ImageCarousel({
             {/* Right arrow */}
             <button
               disabled={isTransitioning}
-              className="cursor-default absolute right-4 top-1/2 transform -translate-y-1/2 text-white hover:text-white/50 pr-6 rounded-full transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="cursor-default absolute right-4 bottom-8 md:top-1/2 transform md:-translate-y-1/2 text-white hover:text-white/50 pr-6 rounded-full transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
               aria-label="Next image"
             >
               <svg
                 onClick={goToNext}
-                className="w-10 h-10 cursor-pointer"
+                className="md:w-10 md:h-10 w-6 h-6 cursor-pointer"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -179,7 +179,7 @@ export default function ImageCarousel({
                 key={index}
                 onClick={() => goToSlide(index)}
                 disabled={isTransitioning}
-                className={`w-3 h-3 rounded-full transition-all duration-200 ${
+                className={`md:w-3 md:h-3 w-2 h-2 rounded-full transition-all duration-200 ${
                   index === currentIndex
                     ? 'bg-white scale-110'
                     : 'bg-white/50 hover:bg-white/70'
