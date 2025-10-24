@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import logo from "../../public/assets/image/covenant-care-logo-square.png";
+import logo from "../../../public/assets/image/covenant-care-logo-square.png";
 
 export default function LoadingIndicator() {
   const [isLoading, setIsLoading] = useState(true);

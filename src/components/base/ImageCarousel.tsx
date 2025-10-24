@@ -35,7 +35,7 @@ export default function ImageCarousel({
       // Reset transition state after animation
       setTimeout(() => {
         setIsTransitioning(false);
-      }, 300);
+      }, 700);
     },
     [isTransitioning]
   );
@@ -88,16 +88,16 @@ export default function ImageCarousel({
   }
 
   return (
-    <div className="relative w-full max-w-4xl mx-auto">
+    <div className="relative w-full">
       {/* Main carousel container */}
       <div className="relative overflow-hidden rounded-lg shadow-lg">
         <div
-          className="flex transition-transform duration-300 ease-in-out"
+          className="flex transition-transform duration-700 ease-in-out"
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
         >
           {items.map((item, index) => (
             <div key={index} className="w-full flex-shrink-0 relative">
-              <div className="relative w-full h-96 md:h-[500px]">
+              <div className="relative w-full h-96 md:h-[625px] rounded-[15px]">
                 <Image
                   src={item.image}
                   alt={item.title}
@@ -105,15 +105,15 @@ export default function ImageCarousel({
                   className="object-cover"
                   priority={index === 0}
                 />
-                {/* Gradient overlay from bottom to top */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-black/20 to-transparent"></div>
+                {/* Gradient overlay from left (darker) to right (lighter) */}
+                <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent rounded-[15px]"></div>
 
                 {/* Title and Content Overlay */}
-                <div className="absolute bottom-8 left-14 right-14 md:left-8 md:right-8 text-white">
-                  <h2 className="text-2xl md:text-3xl font-bold mb-3 leading-tight">
+                <div className="absolute px-15 bottom-22 left-14 right-14 md:left-8 md:right-8 text-white">
+                  <h2 className="text-2xl md:text-[64px] font-bold mb-3 font-inter">
                     {item.title}
                   </h2>
-                  <p className="text-sm md:text-base leading-relaxed opacity-90 text-justify">
+                  <p className="whitespace-pre-line font-inter font-light text-sm md:text-[20px] opacity-90">
                     {item.content}
                   </p>
                 </div>
@@ -127,13 +127,13 @@ export default function ImageCarousel({
           <>
             {/* Left arrow */}
             <button
-              onClick={goToPrevious}
               disabled={isTransitioning}
-              className="cursor-pointer absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 hover:bg-opacity-70 text-white p-2 rounded-full transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="absolute left-4 cursor-default top-1/2 transform -translate-y-1/2 text-white hover:text-white/50 pl-6 rounded-full transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
               aria-label="Previous image"
             >
               <svg
-                className="w-6 h-6"
+                onClick={goToPrevious}
+                className="w-10 h-10 cursor-pointer"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -149,13 +149,13 @@ export default function ImageCarousel({
 
             {/* Right arrow */}
             <button
-              onClick={goToNext}
               disabled={isTransitioning}
-              className="cursor-pointer absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 hover:bg-opacity-70 text-white p-2 rounded-full transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="cursor-default absolute right-4 top-1/2 transform -translate-y-1/2 text-white hover:text-white/50 pr-6 rounded-full transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
               aria-label="Next image"
             >
               <svg
-                className="w-6 h-6"
+                onClick={goToNext}
+                className="w-10 h-10 cursor-pointer"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -173,7 +173,7 @@ export default function ImageCarousel({
 
         {/* Dot indicators */}
         {items.length > 1 && (
-          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+          <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex space-x-2">
             {items.map((_, index) => (
               <button
                 key={index}

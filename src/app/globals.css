@@ -12,16 +12,14 @@
 :root {
   --background: #f2ece5;
   --foreground: #181818;
+  --primary: #2B3D4F;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
   --font-inter: "Inter", sans-serif;
   --font-archivo-black: "Archivo Black", sans-serif;
   --font-new-renaissance: "New Renaissance", serif;
-}
-
-body {
-  background: var(--background);
 }
