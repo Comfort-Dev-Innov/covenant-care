@@ -3,6 +3,8 @@ import ImageCarousel from '../base/ImageCarousel'
 import Image1 from '../../../public/assets/image/image1.png'
 import Image2 from '../../../public/assets/image/image2.png'
 import Image3 from '../../../public/assets/image/image3.png'
+import underline from '../../../public/assets/image/underline.png'
+import Image from 'next/image'
 
 const OurStory = () => {
     const carouselItems = [
@@ -43,7 +45,18 @@ const OurStory = () => {
                 autoPlayInterval={4000}
             />
 
-
+            <div className="flex flex-col items-center justify-center mt-[80px]">
+                <p className="text-center text-primary font-inter text-[26px]">Because every life deserves love and care.</p>
+                <div className="w-[500px] h-[49px]">
+                <Image
+                  src={underline}
+                  width={564}
+                  height={107}
+                  alt="underline"
+                  className="w-full h-full object-contain"
+                />
+                </div>
+            </div>
         </div>
     )
 }
