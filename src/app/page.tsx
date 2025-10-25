@@ -1,7 +1,11 @@
+// import ManagmentTeamSection from "@/components/sections/ManagmentTeamSection";
+import CTASection from "@/components/sections/CTASection";
+
 export default function Home() {
   return (
     <div>
-      TEST
+      {/* <ManagmentTeamSection /> */}
+      <CTASection />
     </div>
   );
 }
