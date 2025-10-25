@@ -1,7 +1,9 @@
+import ManagmentTeamSection from "@/components/sections/ManagmentTeamSection";
+
 export default function Home() {
   return (
     <div>
-      TEST
+      <ManagmentTeamSection />
     </div>
   );
 }
