@@ -4,7 +4,11 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import logo from "../../../public/assets/image/covenant-care-logo-square.png";
 
-export default function LoadingIndicator() {
+interface LoadingIndicatorProps {
+  onLoadingComplete?: () => void;
+}
+
+export default function LoadingIndicator({ onLoadingComplete }: LoadingIndicatorProps) {
   const [isLoading, setIsLoading] = useState(true);
   const [shouldRender, setShouldRender] = useState(true);
 
@@ -17,13 +21,14 @@ export default function LoadingIndicator() {
     // Remove from DOM after 2.5 seconds (allowing time for fade animation)
     const removeTimer = setTimeout(() => {
       setShouldRender(false);
+      onLoadingComplete?.();
     }, 2500);
 
     return () => {
       clearTimeout(fadeTimer);
       clearTimeout(removeTimer);
     };
-  }, []);
+  }, [onLoadingComplete]);
 
   if (!shouldRender) return null;
 

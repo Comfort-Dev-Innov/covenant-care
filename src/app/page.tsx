@@ -1,5 +1,7 @@
 import OurStory from "@/components/sections/OurStory";
 
+import SatellitesSection from "@/components/sections/SatellitesSection";
+import CTASection from "@/components/sections/CTASection";
 import ManagmentTeamSection from "@/components/sections/ManagmentTeamSection";
 
 export default function Home() {
@@ -7,6 +9,8 @@ export default function Home() {
     <div className="min-h-screen bg-background">
       <OurStory />
       <ManagmentTeamSection />
+      <SatellitesSection />
+      <CTASection />
     </div>
   );
 }
