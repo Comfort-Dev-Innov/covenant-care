@@ -10,7 +10,7 @@ interface SatelliteCardProps {
 
 const SatelliteCard: React.FC<SatelliteCardProps> = ({ satellite }) => {
   return (
-    <div className="relative rounded-lg shadow-sm overflow-hidden h-[400px] animate-fadeIn">
+    <div className="relative rounded-lg shadow-sm overflow-hidden h-[400px] max-w-[400px] min-w-[300px] md:min-w-[320px] lg:min-w-[360px] animate-fadeIn">
       {/* Map Image as Background */}
       <div className="absolute inset-0 h-full w-full">
         <Image
@@ -128,10 +128,10 @@ const SatellitesSection: React.FC = () => {
   };
 
   return (
-    <section className="w-full py-16 px-4">
-      <div className="max-w-6xl mx-auto">
+    <section className="w-full py-16 px-4 flex flex-col items-center justify-center">
+      <div className="max-w-[1202px] w-full">
         {/* Section Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 mx-auto w-full">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4 font-inter">
             Satellites
           </h2>
@@ -141,7 +141,7 @@ const SatellitesSection: React.FC = () => {
         </div>
 
         {/* Satellite Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+        <div className="flex flex-wrap justify-center items-center gap-6 mb-8 ">
           {visibleSatellites.map((satellite) => (
             <SatelliteCard key={satellite.id} satellite={satellite} />
           ))}
