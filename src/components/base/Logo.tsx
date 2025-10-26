@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 const Logo = () => {
     return (
-        <div className="bg-background flex gap-[5px] lg:gap-[10px] items-center w-full h-[91px]">
+        <div className="bg-background flex gap-[5px] lg:gap-[10px] items-center w-full h-[91px] rounded-bl-[80px]">
             <div className="w-[40px] sm:w-[60px] lg:w-[84px] h-auto lg:h-[91px]">
                 <Image src="/assets/image/logo-icon.png" className="!w-full !h-full object-contain" alt="logo" width={84} height={91} />
             </div>
