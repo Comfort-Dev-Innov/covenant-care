@@ -25,3 +25,7 @@
   --font-archivo-black: "Archivo Black", sans-serif;
   --font-new-renaissance: "New Renaissance", serif;
 }
+
+body {
+  background: var(--background);
+}
