@@ -97,7 +97,7 @@ export default function ImageCarousel({
         >
           {items.map((item, index) => (
             <div key={index} className="w-full flex-shrink-0 relative">
-              <div className="relative w-full h-[625px] rounded-[15px]">
+              <div className="relative w-full h-[625px] 2xl:h-[800px] rounded-[15px]">
                 <Image
                   src={item.image}
                   alt={item.title}
