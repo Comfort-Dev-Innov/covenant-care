@@ -29,7 +29,7 @@ const OurStory = () => {
     ];
 
     return (
-        <div className="max-w-[1202px] mx-auto px-[10px] sm:px-[20px] md:px-[30px] min-[1202px]:px-0">
+        <div className="max-w-[1202px] min-[1440px]:max-w-[1682px] mx-auto px-[10px] sm:px-[20px] md:px-[30px] min-[1202px]:px-0">
             <div className="flex flex-col items-center justify-center">
                 <h1 className="font-archivo-black text-center text-primary text-[24px] md:text-[54px]">
                     Our Story
@@ -46,8 +46,8 @@ const OurStory = () => {
             />
 
             <div className="flex flex-col items-center justify-center mt-[80px]">
-                <p className="text-center text-primary font-inter text-[26px]">Because every life deserves love and care.</p>
-                <div className="w-[500px] h-[49px]">
+                <p className="text-center text-primary font-inter text-[18px] sm:text-[23px] md:text-[26px]">Because every life deserves love and care.</p>
+                <div className="w-auto md:w-[500px] h-auto md:h-[49px]">
                 <Image
                   src={underline}
                   width={564}
