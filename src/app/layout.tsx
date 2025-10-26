@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/layout/Header";
-import LoadingIndicator from "@/components/LoadingIndicator";
+import LoadingIndicator from "@/components/base/LoadingIndicator";
 
 export const metadata: Metadata = {
   title: "Covenant Care",
