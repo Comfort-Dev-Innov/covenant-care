@@ -4,6 +4,8 @@ import SatellitesSection from "@/components/sections/SatellitesSection";
 import CTASection from "@/components/sections/CTASection";
 import ManagmentTeamSection from "@/components/sections/ManagmentTeamSection";
 
+import FAQ from "@/components/FAQ";
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-background">
@@ -11,6 +13,7 @@ export default function Home() {
       <ManagmentTeamSection />
       <SatellitesSection />
       <CTASection />
+      <FAQ />
     </div>
   );
 }
