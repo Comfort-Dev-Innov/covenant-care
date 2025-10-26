@@ -83,10 +83,10 @@ const SatelliteCard: React.FC<SatelliteCardProps> = ({ satellite }) => {
           {/* Map Button */}
           <button
             onClick={() => window.open(satellite.link, "_blank")}
-            className="cursor-pointer ml-4 w-10 h-10 bg-secondary rounded-lg flex items-center justify-center hover:bg-secondary/80 transition-colors"
+            className="cursor-pointer ml-4 w-10 h-10 bg-[var(--secondary)] rounded-lg flex items-center justify-center transition-colors"
           >
             <svg
-              className="w-5 h-5 text-black hover:scale-110 transition-all duration-300"
+              className="w-5 h-5 hover:scale-110 transition-all duration-300 text-white"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
