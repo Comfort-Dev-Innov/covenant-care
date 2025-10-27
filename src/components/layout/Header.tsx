@@ -60,7 +60,7 @@ const Header = () => {
     <div className={`fixed bg-background top-0 left-0 w-full z-50 transition-shadow duration-300 ${isScrolled ? 'shadow-2xl rounded-b-[80px]' : ''}`}>
       <header className={`bg-background flex items-center justify-between max-w-[1202px] min-[1440px]:max-w-[1682px] mx-auto px-[10px] sm:px-[20px] md:px-[30px] min-[1202px]:px-0 transition-all duration-300 ${isScrolled ? 'rounded-b-[30px] md:rounded-b-[80px] md:py-2' : 'md:py-4'}`}>
         <div className="w-auto min-[1440px]:w-1/2 h-[91px]">
-          <Logo />
+          <Logo variant="header" />
         </div>
         <div className="hidden md:block">
           <nav>
