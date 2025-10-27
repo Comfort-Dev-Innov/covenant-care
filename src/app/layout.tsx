@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Inter, Archivo_Black } from "next/font/google";
 import "./globals.css";
 import AppWrapper from "@/components/layout/AppWrapper";
 

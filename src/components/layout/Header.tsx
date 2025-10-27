@@ -37,6 +37,8 @@ const Header = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false)
   const [openMobileSubmenu, setOpenMobileSubmenu] = useState<string | null>(null)
   const [isClosing, setIsClosing] = useState(false)
+  const [isInView, setIsInView] = useState(false)
+  const headerRef = React.useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,6 +47,28 @@ const Header = () => {
 
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true)
+        }
+      },
+      { threshold: 0.1 }
+    )
+
+    const currentHeader = headerRef.current
+    if (currentHeader) {
+      observer.observe(currentHeader)
+    }
+
+    return () => {
+      if (currentHeader) {
+        observer.unobserve(currentHeader)
+      }
+    }
   }, [])
 
   const handleCloseDrawer = () => {
@@ -57,7 +81,7 @@ const Header = () => {
   }
 
   return (
-    <div className={`fixed bg-background top-0 left-0 w-full z-50 transition-shadow duration-300 ${isScrolled ? 'shadow-2xl rounded-b-[80px]' : ''}`}>
+    <div ref={headerRef} className={`fixed bg-background top-0 left-0 w-full z-1000 transition-shadow duration-300 ${isScrolled ? 'shadow-2xl rounded-b-[80px]' : ''} ${isInView ? 'animate-fadeIn' : 'opacity-0'}`}>
       <header className={`bg-background flex items-center justify-between max-w-[1202px] min-[1440px]:max-w-[1682px] mx-auto px-[10px] sm:px-[20px] md:px-[30px] min-[1202px]:px-0 transition-all duration-300 ${isScrolled ? 'rounded-b-[30px] md:rounded-b-[80px] md:py-2' : 'md:py-4'}`}>
         <div className="w-auto min-[1440px]:w-1/2 h-[91px]">
           <Logo variant="header" />
@@ -110,12 +134,12 @@ const Header = () => {
         <>
           {/* Overlay */}
           <div 
-            className={`fixed inset-0 bg-black/50 z-[60] ${isClosing ? 'animate-[fadeOut_0.3s_ease-out]' : 'animate-[fadeIn_0.3s_ease-out]'}`}
+            className={`fixed min-h-screen inset-0 bg-black/50 z-[1000]`}
             onClick={handleCloseDrawer}
           />
           
           {/* Drawer */}
-          <div className={`fixed top-0 right-0 h-full w-[280px] min-[400px]:w-[320px] bg-background z-[70] shadow-2xl overflow-y-auto ${isClosing ? 'animate-[slideOutRight_0.3s_ease-out]' : 'animate-[slideInRight_0.3s_ease-out]'}`}>
+          <div className={`fixed top-0 right-0 h-full w-[280px] min-[400px]:w-[320px] bg-background z-[9999] min-h-screen shadow-2xl overflow-y-auto ${isClosing ? 'animate-[slideOutRight_0.3s_ease-out]' : 'animate-[slideInRight_0.3s_ease-out]'}`}>
             {/* Close Button */}
             <div className="flex justify-end p-4">
               <IoClose 

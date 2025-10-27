@@ -15,7 +15,7 @@ export default function AppWrapper({ children }: AppWrapperProps) {
     <>
       <LoadingIndicator onLoadingComplete={() => setIsLoadingComplete(true)} />
       {isLoadingComplete && <Header />}
-      <div className="mt-[120px]">
+      <div className="animate-simpleFadeIn mt-[120px]">
         {children}
       </div>
     </>
