@@ -15,7 +15,7 @@
   --primary: #2B3D4F;
   --secondary: #D4A017;
   --black: #181818;
-  --secondary: #d4a017;
+  --white: #FCFDFB;
 }
 
 @theme inline {
@@ -24,6 +24,7 @@
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
   --color-black: var(--black);
+  --color-white: var(--white);
   --font-inter: "Inter", sans-serif;
   --font-archivo-black: "Archivo Black", sans-serif;
   --font-new-renaissance: "New Renaissance", serif;
