@@ -43,7 +43,7 @@ const CORE_VALUES: CoreValueItem[] = [
 
 const CoreValues = () => {
   return (
-    <section className="w-full bg-primary">
+    <section id="core-values" className="w-full bg-primary">
         <div className="space-y-12 md:space-y-16 max-w-[1202px] min-[1440px]:max-w-[1682px] mx-auto px-[10px] sm:px-[20px] md:px-[30px] min-[1202px]:px-0 py-20 md:pt-24 md:pb-32">
             <div className="w-full flex flex-col justify-center">
                 <h1 className="text-white font-archivo-black text-[24px] md:text-[45px] text-center">Our Core Values</h1>

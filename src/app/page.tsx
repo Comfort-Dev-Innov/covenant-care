@@ -6,6 +6,7 @@ import FAQ from "@/components/FAQ";
 import Footer from "@/components/layout/Footer";
 import HeroSection from "@/components/sections/HeroSection";
 import CoreValues from "@/components/sections/CoreValues";
+import CompanyGoals from "@/components/sections/CompanyGoals";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <HeroSection />
       <OurStory />
       <CoreValues/>
+      <CompanyGoals />
       <SatellitesSection />
       <ManagmentTeamSection />
       <FAQ />

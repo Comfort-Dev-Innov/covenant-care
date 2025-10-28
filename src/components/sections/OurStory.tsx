@@ -29,7 +29,7 @@ const OurStory = () => {
     ];
 
     return (
-        <div className="max-w-[1202px] min-[1440px]:max-w-[1682px] mx-auto px-[10px] sm:px-[20px] md:px-[30px] min-[1202px]:px-0 py-16 xl:pt-20 xl:pb-34">
+        <div id="story" className="max-w-[1202px] min-[1440px]:max-w-[1682px] mx-auto px-[10px] sm:px-[20px] md:px-[30px] min-[1202px]:px-0 py-16 xl:pt-20 xl:pb-34">
             <div className="flex flex-col items-center justify-center">
                 <h1 className="font-archivo-black text-center text-primary text-[24px] md:text-[54px]">
                     Our Story
