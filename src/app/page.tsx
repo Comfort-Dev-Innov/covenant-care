@@ -7,6 +7,7 @@ import Footer from "@/components/layout/Footer";
 import HeroSection from "@/components/sections/HeroSection";
 import CoreValues from "@/components/sections/CoreValues";
 import CompanyGoals from "@/components/sections/CompanyGoals";
+import PlanSection from "@/components/sections/PlanSection";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <CompanyGoals />
       <SatellitesSection />
       <ManagmentTeamSection />
+      <PlanSection />
       <FAQ />
       <CTASection />
       <Footer />
