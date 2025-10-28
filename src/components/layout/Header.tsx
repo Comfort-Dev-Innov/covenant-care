@@ -15,9 +15,9 @@ type MenuItem = {
 }
 
 const menuItems: MenuItem[] = [
-  { label: 'Home', href: '/', icon: IoHome },
+  { label: 'Home', href: '#', icon: IoHome },
   {
-    label: 'About Us', href: '#about', icon: IoInformationCircle,
+    label: 'About Us', href: '#story', icon: IoInformationCircle,
     subMenu: [
       { label: 'Our Story', href: '#story' },
       { label: 'Our Core Values', href: '#core-values' },
@@ -77,7 +77,7 @@ const Header = () => {
       setIsDrawerOpen(false)
       setIsClosing(false)
       setOpenMobileSubmenu(null)
-    }, 300) // Match animation duration
+    }, 300)
   }
 
   return (
