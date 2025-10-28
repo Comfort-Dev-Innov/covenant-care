@@ -4,7 +4,7 @@ import TeammateCard from "../base/TeammateCard";
 
 export default function ManagmentTeamSection() {
   return (
-    <div className="px-4 py-8">
+    <section id="management" className="px-4 py-8">
       <h2 className="font-archivo-black text-4xl font-bold text-center mb-[10px] text-[#2C4F5E]">
         Management Team
       </h2>
@@ -16,6 +16,6 @@ export default function ManagmentTeamSection() {
           <TeammateCard key={teammate.name} teammate={teammate} />
         ))}
       </div>
-    </div>
+    </section>
   );
 }

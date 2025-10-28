@@ -72,7 +72,9 @@ const SatelliteCard: React.FC<SatelliteCardProps> = ({ satellite }) => {
                 />
               </svg>
               <a
-                href={`tel:${satellite.phone.replace(/\s/g, "")}`}
+                href={`tel:${satellite.phone?.replace(/\s/g, "") ?? ""}`}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-sm text-black hover:text-blue-600 hover:underline duration-300 transition-all font-inter"
               >
                 {satellite.phone}
@@ -81,30 +83,32 @@ const SatelliteCard: React.FC<SatelliteCardProps> = ({ satellite }) => {
           </div>
 
           {/* Map Button */}
-          <button
-            onClick={() => window.open(satellite.link, "_blank")}
-            className="cursor-pointer ml-4 w-10 h-10 bg-[var(--secondary)] rounded-lg flex items-center justify-center transition-colors"
-          >
-            <svg
-              className="w-5 h-5 hover:scale-110 transition-all duration-300 text-white"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+          {satellite.link && (
+            <button
+              onClick={() => window.open(satellite.link ?? "", "_blank")}
+              className="cursor-pointer ml-4 w-10 h-10 bg-[var(--secondary)] rounded-lg flex items-center justify-center transition-colors"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-              />
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-              />
-            </svg>
-          </button>
+              <svg
+                className="w-5 h-5 hover:scale-110 transition-all duration-300 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+              </svg>
+            </button>
+          )}
         </div>
       </div>
     </div>
@@ -128,7 +132,10 @@ const SatellitesSection: React.FC = () => {
   };
 
   return (
-    <section className="w-full py-16 px-4 flex flex-col items-center justify-center">
+    <section
+      id="satellites"
+      className="w-full py-16 px-4 flex flex-col items-center justify-center"
+    >
       <div className="max-w-[1202px] w-full">
         {/* Section Header */}
         <div className="text-center mb-12 mx-auto w-full">
