@@ -3,6 +3,8 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { satellitesData, Satellite } from "@/constants/satellitesData";
+import { motion } from 'framer-motion';
+import Button from "@/components/base/Button";
 
 interface SatelliteCardProps {
   satellite: Satellite;
@@ -134,36 +136,51 @@ const SatellitesSection: React.FC = () => {
   return (
     <section
       id="satellites"
-      className="w-full py-16 px-4 flex flex-col items-center justify-center"
+      className="w-full max-w-[1202px] min-[1440px]:max-w-[1682px] mx-auto px-[10px] sm:px-[20px] md:px-[30px] min-[1202px]:px-0 pt-16 pb-20 xl:pt-20 xl:pb-28 flex flex-col items-center justify-center"
     >
-      <div className="max-w-[1202px] w-full">
+      <div className="w-full">
         {/* Section Header */}
-        <div className="text-center mb-12 mx-auto w-full">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4 font-inter">
+        <motion.div
+          className="flex flex-col items-center justify-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true, amount: 0.5 }}
+        >
+          <h1 className="font-archivo-black text-center text-primary text-[24px] md:text-[54px]">
             Satellites
-          </h2>
-          <p className="text-lg text-gray-600 font-inter">
-            Find a <strong>Covenant Care</strong> satellite near you
+          </h1>
+          <p className="font-light font-inter text-black text-center text-[14px] md:text-[18px] mb-[36px] md:mb-[53px]">
+            Find a <strong className="!font-bold">Covenant Care</strong> satellite near you
           </p>
-        </div>
+        </motion.div>
 
         {/* Satellite Cards Grid */}
-        <div className="flex flex-wrap justify-center items-center gap-6 mb-8 ">
-          {visibleSatellites.map((satellite) => (
-            <SatelliteCard key={satellite.id} satellite={satellite} />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8 max-w-[1200px] mx-auto place-items-center">
+          {visibleSatellites.map((satellite, index) => (
+            <motion.div
+              key={satellite.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true, amount: 0.3 }}
+            >
+              <SatelliteCard satellite={satellite} />
+            </motion.div>
           ))}
         </div>
 
         {/* Load More Button */}
         {hasMore && (
           <div className="text-center">
-            <button
+            <Button
               onClick={loadMore}
               disabled={isLoading}
-              className="px-8 py-3 bg-gray-800 text-white rounded-lg font-medium hover:bg-gray-900 transition-colors font-inter disabled:opacity-50 disabled:cursor-not-allowed"
+              variant="filled"
+              className="disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isLoading ? "Loading..." : "See More Satellites"}
-            </button>
+            </Button>
           </div>
         )}
       </div>
