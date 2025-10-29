@@ -1,15 +1,15 @@
 'use client'
 
-import React, { useState } from 'react'
+import React from 'react'
 import Logo from '../base/Logo'
-import ProofPopup from '../base/ProofPopup'
+import { useProofPopup } from './AppWrapper'
 
 import { MdLocalPhone } from "react-icons/md";
 import { HiBuildingOffice2 } from "react-icons/hi2";
 import { IoIosPaper } from "react-icons/io";
 
 const Footer = () => {
-    const [isProofPopupOpen, setIsProofPopupOpen] = useState(false)
+    const { openProofPopup } = useProofPopup()
 
     return (
         <footer className="bg-[#F2E7DA] border-t border-[#DBDBDB]">
@@ -49,7 +49,7 @@ const Footer = () => {
                         <h1 className="mt-6 md:mt-0 text-primary font-bold tracking-[.2em]">Quick Links</h1>
                         <p 
                             className="text-[15px] mt-2 cursor-pointer hover:text-primary transition-all duration-300 inline-block relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
-                            onClick={() => setIsProofPopupOpen(true)}
+                            onClick={openProofPopup}
                         >
                             Proof of Legalities
                         </p>
@@ -59,11 +59,6 @@ const Footer = () => {
             <div className="border-t border-primary flex justify-center items-center py-6">
                 <p className="font-inter text-primary text-center text-[14px] md:text-[16px]">© 2025 Covenant Care. All rights reserved.</p>
             </div>
-
-            <ProofPopup 
-                isOpen={isProofPopupOpen} 
-                onClose={() => setIsProofPopupOpen(false)} 
-            />
         </footer>
     )
 }
