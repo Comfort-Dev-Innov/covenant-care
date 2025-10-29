@@ -16,7 +16,7 @@ import { useOnboarding } from '../layout/AppWrapper';
 const PlanSection: React.FC = () => {
     const { openPopup } = useOnboarding();
     return (
-        <section id="plans" className="relative bg-background overflow-hidden animate-fadeIn mt-32">
+        <section id="plans" className="relative bg-background overflow-hidden animate-fadeIn mt-22">
             <div
                 className="absolute right-0 top-0 bottom-0 w-full opacity-20"
                 style={{
@@ -104,9 +104,9 @@ const PlanSection: React.FC = () => {
                             <PlanCard
                                 icon={HiMiniUserGroup}
                                 carePlanName="Family"
-                                membershipFee={1000}
+                                membershipFee={1500}
                                 covenantFund={300}
-                                members="One (1) planholder"
+                                members="Three (3) planholders"
                                 benefits={[
                                     {
                                         icon: MdRememberMe,

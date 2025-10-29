@@ -13,7 +13,7 @@ export const faqData: FAQItem[] = [
       <>
         Yes. Covenant Care Association, Inc. is a duly registered and legitimate
         organization recognized by the{" "}
-        <strong>Securities and Exchange Commission (SEC)</strong> and complies
+        <strong className="font-extrabold">Securities and Exchange Commission (SEC)</strong> and complies
         with all applicable government regulations.
         <br />
         <br />
@@ -26,7 +26,7 @@ export const faqData: FAQItem[] = [
     question: "Is suicide covered?",
     answer: (
       <>
-        No. Only <strong>natural or accidental causes of death</strong> that
+        No. Only <strong className="font-extrabold">natural causes of death</strong> that
         occur after the contestability period are covered under the policy.
       </>
     ),
@@ -37,7 +37,7 @@ export const faqData: FAQItem[] = [
     answer: (
       <>
         Yes, you may be both a plan holder and a beneficiary,{" "}
-        <strong>but not within the same policy.</strong>
+        <strong className="font-extrabold">but not within the same policy.</strong>
       </>
     ),
     isHTML: true,
@@ -48,9 +48,8 @@ export const faqData: FAQItem[] = [
     answer: (
       <>
         Once the ₱300 maintaining Covenant Fund is{" "}
-        <strong>fully consumed and not replenished</strong>, the policy is
-        replenished, the policy is
-        <strong> automatically forfeited and rendered unenforceable.</strong>
+        <strong className="font-extrabold">fully consumed and not replenished</strong>, the
+        policy is <strong className="font-extrabold">automatically forfeited and rendered unenforceable</strong>.
       </>
     ),
     isHTML: true,
@@ -59,11 +58,8 @@ export const faqData: FAQItem[] = [
     question: "Where can I claim the cash assistance benefit?",
     answer: (
       <>
-        Claims may be filed at any{" "}
-        <strong>authorized Covenant Care Association satellite office.</strong>{" "}
-        Our team will gladly assist you in completing the satellite office. Our
-        team will gladly assist you in completing the required documents and the
-        processing of your claim.
+        Claims may be filed at any <strong className="font-extrabold">authorized Covenant Care Association branch office</strong>.
+        Our team will gladly assist you in completing the required documents and the processing of your claim.
       </>
     ),
     isHTML: false,
@@ -74,6 +70,7 @@ export const faqData: FAQItem[] = [
       <>
         The following documents must be prepared:{" "}
         <ul
+          className="pl-6"
           style={{
             marginLeft: "1.5rem",
             marginTop: "0.5rem",
@@ -81,13 +78,14 @@ export const faqData: FAQItem[] = [
           }}
         >
           <li>
-            Certified true copy of the<strong> Death Certificate</strong>
+            Certified true copy of the <strong className="font-extrabold">Death Certificate</strong> from{" "}
+            <strong className="font-extrabold">Local Civil Registry Office</strong>
           </li>
           <li>
-            <strong>Valid ID</strong> of the benificiary
+            <strong className="font-extrabold">Valid ID</strong> of the benificiary
           </li>
           <li>
-            <strong>Original Covenant Care Policy</strong>
+            <strong className="font-extrabold">Original Covenant Care Policy</strong>
           </li>
         </ul>
       </>
@@ -98,23 +96,27 @@ export const faqData: FAQItem[] = [
     question: "How long does it take to process a claim?",
     answer: (
       <>
-        Upon verified notification of death, <strong>₱20,000</strong> will be
-        released immediately to the beneficiary. <br />
-        The remaining <strong>₱45,000</strong> will be released{" "}
-        <strong>within three (3) banking days</strong> after submission and
-        verification of all required banking days after submission and
-        verification of all required documents.
+        Upon verified notification of death, <strong className="font-extrabold">₱20,000</strong> will be released immediately to the beneficiary. <br />
+        The remaining <strong className="font-extrabold">₱45,000</strong> will be released <strong className="font-extrabold">within three (3) banking days</strong> after submission and verification of all required documents.
       </>
     ),
     isHTML: true,
+  },
+  {
+    question: "What happens if multiple plan holders pass away at the same time?",
+    answer: (
+      <>
+        Covenant Care is prepared for such events through the <strong className="font-extrabold">Covenant Fund</strong> and reserve system, ensuring that all valid claims are honored promptly. Our mission is to extend care and support to every family who needs it — <strong className="font-extrabold">because every life deserves love and care</strong>.
+      </>
+    )
   },
   {
     question: "Can I change my beneficiaries after registration?",
     answer: (
       <>
         Yes. Plan holders may update their beneficiaries by submitting a{" "}
-        <strong>Beneficiary Update and Amendment Form</strong> at their
-        respective Covenant Care satellite office.
+        <strong className="font-extrabold">Beneficiary Update and Amendment Form</strong> at their
+        respective Covenant Care branch office.
       </>
     ),
     isHTML: true,
@@ -123,8 +125,8 @@ export const faqData: FAQItem[] = [
     question: "Can I transfer my plan to someone else?",
     answer: (
       <>
-        No. All plans are <strong>non-transferable</strong>. Once registered,
-        the plan is <strong>exclusively assigned</strong> to the named holder.
+        No. All plans are <strong className="font-extrabold">non-transferable</strong>. Once registered,
+        the plan is <strong className="font-extrabold">exclusively assigned</strong> to the named holder.
       </>
     ),
     isHTML: true,
@@ -134,7 +136,7 @@ export const faqData: FAQItem[] = [
       "Is there an age limit for becoming a plan holder or beneficiary?",
     answer: (
       <>
-        Plan holders must be at <strong>least 18 years old</strong> at the time
+        Plan holders must be at <strong className="font-extrabold">least 18 years old</strong> at the time
         of enrollment. Beneficiaries may be of any age.
       </>
     ),
@@ -146,8 +148,8 @@ export const faqData: FAQItem[] = [
     answer: (
       <>
         At present, the primary benefit is the{" "}
-        <strong>death cash assistance</strong>. However, Covenant Care aims to
-        introduce <strong>additional wellness and support programs</strong> for
+        <strong className="font-extrabold">death cash assistance</strong>. However, Covenant Care aims to
+        introduce <strong className="font-extrabold">additional wellness and support programs</strong> for
         active members in the future.
       </>
     ),

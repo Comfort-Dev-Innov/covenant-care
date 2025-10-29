@@ -13,7 +13,7 @@ const links = {
 
 const CTASection: React.FC = () => {
   return (
-    <section id="contact" className="w-full max-w-[1280px] mx-auto px-[10px] sm:px-[20px] md:px-[30px] min-[1202px]:px-0 pb-16 md:pb-38 pt-12 md:pt-20">
+    <section id="contact" className="w-full max-w-[1280px] mx-auto px-[10px] sm:px-[20px] md:px-[30px] min-[1202px]:px-0 pb-16 md:pb-38 pt-12 md:pt-16">
       <div className=" mx-auto text-center w-full">
         <motion.div 
           className="flex flex-col gap-[15px] mb-16"

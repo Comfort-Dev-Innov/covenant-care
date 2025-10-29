@@ -17,7 +17,6 @@ export default function Home() {
       <CoreValues />
       <CompanyGoals />
       <SatellitesSection />
-      <ManagmentTeamSection />
       <PlanSection />
       <FAQ />
       <CTASection />
