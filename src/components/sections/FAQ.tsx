@@ -14,9 +14,9 @@ const FAQItemComponent: React.FC<FAQItemProps> = ({ faq, isOpen, onClick }) => {
     <div className="border-b border-foreground/20">
       <button
         onClick={onClick}
-        className="w-full py-4 px-0 flex items-center justify-between text-left hover:opacity-70 transition-opacity cursor-pointer"
+        className="w-full py-4 px-0 flex items-center justify-between text-left hover:opacity-70 transition-all duratoin-300 cursor-pointer"
       >
-        <span className="text-foreground font-medium pr-4 cursor-pointer font-[family-name:var(--font-inter)]">
+        <span className="text-foreground text-[18px] md:text-[20px] font-light pr-4 cursor-pointer font-inter">
           {faq.question}
         </span>
         <svg
@@ -36,16 +36,18 @@ const FAQItemComponent: React.FC<FAQItemProps> = ({ faq, isOpen, onClick }) => {
         </svg>
       </button>
       <div
-        className={`overflow-hidden transition-all duration-300 ease-in-out ${
-          isOpen ? "max-h-[1000px] opacity-100" : "max-h-0 opacity-0"
+        className={`grid transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] ${
+          isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
         }`}
       >
-        <div className="pb-6 pt-2 text-foreground/80 px-12">
-          {faq.isHTML ? (
-            <div className="prose prose-sm max-w-none">{faq.answer}</div>
-          ) : (
-            <p>{faq.answer}</p>
-          )}
+        <div className="overflow-hidden">
+          <div className="pb-6 pt-2 text-foreground/80 px-12 text-[16px] md:text-[18px] font-light">
+            {faq.isHTML ? (
+              <div className="prose prose-sm max-w-none">{faq.answer}</div>
+            ) : (
+              <p>{faq.answer}</p>
+            )}
+          </div>
         </div>
       </div>
     </div>
@@ -62,9 +64,9 @@ const FAQ: React.FC = () => {
   return (
     <section
       id="faq"
-      className="w-full max-w-[1202px] min-w-[300px] mx-auto px-4 py-12"
+      className="w-full max-w-[1280px] mx-auto max-md:px-[10px] py-16 md:py-36"
     >
-      <h2 className="text-3xl md:text-4xl font-bold sm:text-left text-center mb-8 font-archivo-black text-[#2B3D4F]">
+      <h2 className="text-[24px] md:text-[45px] text-center sm:text-left mb-8 font-archivo-black text-primary">
         Frequently Asked <br /> Questions
       </h2>
       <div className="">
