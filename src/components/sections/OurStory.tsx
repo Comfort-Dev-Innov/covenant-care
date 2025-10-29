@@ -1,4 +1,7 @@
+'use client';
+
 import React from 'react'
+import { motion } from 'framer-motion'
 import ImageCarousel from '../base/ImageCarousel'
 import Image1 from '../../../public/assets/image/image1.png'
 import Image2 from '../../../public/assets/image/image2.png'
@@ -29,23 +32,45 @@ const OurStory = () => {
     ];
 
     return (
-        <div id="story" className="max-w-[1202px] min-[1440px]:max-w-[1682px] mx-auto px-[10px] sm:px-[20px] md:px-[30px] min-[1202px]:px-0 py-16 xl:pt-20 xl:pb-34">
-            <div className="flex flex-col items-center justify-center">
+        <div 
+            id="story" 
+            className="max-w-[1202px] min-[1440px]:max-w-[1682px] mx-auto px-[10px] sm:px-[20px] md:px-[30px] min-[1202px]:px-0 py-16 xl:pt-20 xl:pb-34"
+        >
+            <motion.div 
+                className="flex flex-col items-center justify-center"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true, amount: 0.3 }}
+            >
                 <h1 className="font-archivo-black text-center text-primary text-[24px] md:text-[54px]">
                     Our Story
                 </h1>
                 <p className="font-light font-inter text-black text-center text-[14px] md:text-[18px] mb-[36px] md:mb-[53px]">
                     The story behind what we do and why we do it
                 </p>
-            </div>
+            </motion.div>
 
-            <ImageCarousel
-                items={carouselItems}
-                autoPlay={true}
-                autoPlayInterval={4000}
-            />
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true, amount: 0.3 }}
+            >
+                <ImageCarousel
+                    items={carouselItems}
+                    autoPlay={true}
+                    autoPlayInterval={4000}
+                />
+            </motion.div>
 
-            <div className="flex flex-col items-center justify-center mt-[80px]">
+            <motion.div 
+                className="flex flex-col items-center justify-center mt-[80px]"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                viewport={{ once: true, amount: 0.3 }}
+            >
                 <p className="text-center text-primary font-inter text-[18px] sm:text-[23px] md:text-[26px]">Because every life deserves love and care.</p>
                 <div className="w-auto md:w-[500px] h-auto md:h-[49px]">
                 <Image
@@ -56,7 +81,7 @@ const OurStory = () => {
                   className="w-full h-full object-contain"
                 />
                 </div>
-            </div>
+            </motion.div>
         </div>
     )
 }
