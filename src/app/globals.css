@@ -9,6 +9,23 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Inter';
+  src: url('/assets/fonts/InterVariable.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/assets/fonts/InterVariable-Italic.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+
 :root {
   --background: #f2ece5;
   --foreground: #181818;
