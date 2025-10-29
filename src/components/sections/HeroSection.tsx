@@ -103,7 +103,7 @@ const HeroSection = () => {
                             transition={{ duration: 0.6, delay: 0.2 }}
                         >
                             <p className="font-inter max-md:text-center text-[14px] lg:text-[18px] text-primary">Prepare today with Covenant Care and give your family peace, dignity, and security — because every life deserves love and care.</p>
-                            <Button className="max-md:!flex max-md:!justify-center max-md:!mx-auto !text-[14px] lg:!text-[18px]">Get Your Plan Now! ⟶</Button>
+                            <Button className="max-md:!flex max-md:!justify-center max-md:!mx-auto !text-[14px] lg:!text-[18px]" onClick={() => window.location.href="#plans"}>Get Your Plan Now! ⟶</Button>
                         </motion.div>
                         <motion.div 
                             className="flex flex-col mt-8 max-md:justify-center max-md:items-center"

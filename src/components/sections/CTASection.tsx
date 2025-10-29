@@ -55,7 +55,7 @@ const CTASection: React.FC = () => {
             {/* To be changed when plan section is implemented */}
             <Button
               variant="outline"
-              onClick={() => alert("Select insurance policy from the menu above")}
+              onClick={() => window.location.href="#plans"}
             >
               Inquire Now →
             </Button>
