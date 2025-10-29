@@ -60,7 +60,10 @@ const FAQ: React.FC = () => {
   };
 
   return (
-    <section className="w-full max-w-[1202px] min-w-[300px] mx-auto px-4 py-12">
+    <section
+      id="faq"
+      className="w-full max-w-[1202px] min-w-[300px] mx-auto px-4 py-12"
+    >
       <h2 className="text-3xl md:text-4xl font-bold sm:text-left text-center mb-8 font-archivo-black text-[#2B3D4F]">
         Frequently Asked <br /> Questions
       </h2>

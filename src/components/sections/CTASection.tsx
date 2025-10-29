@@ -11,7 +11,7 @@ const links = {
 
 const CTASection: React.FC = () => {
   return (
-    <section className="w-full bg-[#f2ece5] py-16 px-4">
+    <section id="contact" className="w-full bg-[#f2ece5] py-16 px-4">
       <div className=" mx-auto text-center w-full">
         {/* Tagline */}
         <p className="text-capitalize text-2xl font-medium text-[#181818] uppercase tracking-wider mb-4 font-inter w-full">

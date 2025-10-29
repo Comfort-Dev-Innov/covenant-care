@@ -3,6 +3,8 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { satellitesData, Satellite } from "@/constants/satellitesData";
+import { motion } from 'framer-motion';
+import Button from "@/components/base/Button";
 
 interface SatelliteCardProps {
   satellite: Satellite;
@@ -72,7 +74,9 @@ const SatelliteCard: React.FC<SatelliteCardProps> = ({ satellite }) => {
                 />
               </svg>
               <a
-                href={`tel:${satellite.phone.replace(/\s/g, "")}`}
+                href={`tel:${satellite.phone?.replace(/\s/g, "") ?? ""}`}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-sm text-black hover:text-blue-600 hover:underline duration-300 transition-all font-inter"
               >
                 {satellite.phone}
@@ -81,30 +85,32 @@ const SatelliteCard: React.FC<SatelliteCardProps> = ({ satellite }) => {
           </div>
 
           {/* Map Button */}
-          <button
-            onClick={() => window.open(satellite.link, "_blank")}
-            className="cursor-pointer ml-4 w-10 h-10 bg-[var(--secondary)] rounded-lg flex items-center justify-center transition-colors"
-          >
-            <svg
-              className="w-5 h-5 hover:scale-110 transition-all duration-300 text-white"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+          {satellite.link && (
+            <button
+              onClick={() => window.open(satellite.link ?? "", "_blank")}
+              className="cursor-pointer ml-4 w-10 h-10 bg-[var(--secondary)] rounded-lg flex items-center justify-center transition-colors"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-              />
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-              />
-            </svg>
-          </button>
+              <svg
+                className="w-5 h-5 hover:scale-110 transition-all duration-300 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+              </svg>
+            </button>
+          )}
         </div>
       </div>
     </div>
@@ -128,35 +134,53 @@ const SatellitesSection: React.FC = () => {
   };
 
   return (
-    <section className="w-full py-16 px-4 flex flex-col items-center justify-center">
-      <div className="max-w-[1202px] w-full">
+    <section
+      id="satellites"
+      className="w-full max-w-[1202px] min-[1440px]:max-w-[1682px] mx-auto px-[10px] sm:px-[20px] md:px-[30px] min-[1202px]:px-0 pt-16 pb-20 xl:pt-20 xl:pb-28 flex flex-col items-center justify-center"
+    >
+      <div className="w-full">
         {/* Section Header */}
-        <div className="text-center mb-12 mx-auto w-full">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4 font-inter">
+        <motion.div
+          className="flex flex-col items-center justify-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true, amount: 0.5 }}
+        >
+          <h1 className="font-archivo-black text-center text-primary text-[24px] md:text-[54px]">
             Satellites
-          </h2>
-          <p className="text-lg text-gray-600 font-inter">
-            Find a <strong>Covenant Care</strong> satellite near you
+          </h1>
+          <p className="font-light font-inter text-black text-center text-[14px] md:text-[18px] mb-[36px] md:mb-[53px]">
+            Find a <strong className="!font-bold">Covenant Care</strong> satellite near you
           </p>
-        </div>
+        </motion.div>
 
         {/* Satellite Cards Grid */}
-        <div className="flex flex-wrap justify-center items-center gap-6 mb-8 ">
-          {visibleSatellites.map((satellite) => (
-            <SatelliteCard key={satellite.id} satellite={satellite} />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8 max-w-[1200px] mx-auto place-items-center">
+          {visibleSatellites.map((satellite, index) => (
+            <motion.div
+              key={satellite.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true, amount: 0.3 }}
+            >
+              <SatelliteCard satellite={satellite} />
+            </motion.div>
           ))}
         </div>
 
         {/* Load More Button */}
         {hasMore && (
           <div className="text-center">
-            <button
+            <Button
               onClick={loadMore}
               disabled={isLoading}
-              className="px-8 py-3 bg-gray-800 text-white rounded-lg font-medium hover:bg-gray-900 transition-colors font-inter disabled:opacity-50 disabled:cursor-not-allowed"
+              variant="filled"
+              className="disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isLoading ? "Loading..." : "See More Satellites"}
-            </button>
+            </Button>
           </div>
         )}
       </div>
