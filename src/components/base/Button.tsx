@@ -16,7 +16,7 @@ const Button = ({
   
   const variantStyles = {
     filled: 'bg-primary text-white hover:bg-primary/90 shadow-md',
-    outline: 'bg-transparent text-primary border-2 border-primary hover:bg-primary hover:text-white'
+    outline: 'bg-transparent text-primary border-1 border-primary hover:bg-primary hover:text-white'
   }
 
   return (
