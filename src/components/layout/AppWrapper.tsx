@@ -36,11 +36,14 @@ export default function AppWrapper({ children }: AppWrapperProps) {
   return (
     <OnboardingContext.Provider value={{ openPopup }}>
       <LoadingIndicator onLoadingComplete={() => setIsLoadingComplete(true)} />
-      {isLoadingComplete && <Header />}
-      <div className="animate-simpleFadeIn mt-[120px]">
-        {children}
-      </div>
-      
+      {isLoadingComplete && (
+        <>
+          <Header />
+          <div className="animate-simpleFadeIn mt-[120px]">
+            {children}
+          </div>
+        </>
+      )}
       <OnboardingPopup
         isOpen={isPopupOpen}
         onClose={() => setIsPopupOpen(false)}
