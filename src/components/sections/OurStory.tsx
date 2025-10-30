@@ -3,9 +3,9 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import ImageCarousel from '../base/ImageCarousel'
-import Image1 from '../../../public/assets/image/image1.png'
-import Image2 from '../../../public/assets/image/image2.png'
-import Image3 from '../../../public/assets/image/image3.png'
+import Image1 from '../../../public/assets/image/image1.jpg'
+import Image2 from '../../../public/assets/image/image2.jpg'
+import Image3 from '../../../public/assets/image/image3.jpg'
 import underline from '../../../public/assets/image/underline.png'
 import Image from 'next/image'
 

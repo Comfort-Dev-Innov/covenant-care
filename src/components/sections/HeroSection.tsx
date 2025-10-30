@@ -126,7 +126,7 @@ const HeroSection = () => {
                                 initial={{ opacity: 0, y: 50 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.6, delay: 0.3 }}
-                                className="relative max-sm:w-[90px] max-md:w-[100px] max-md:h-[300px] w-[180px] h-[600px] rounded-[20px] overflow-hidden drop-shadow-md/50 translate-y-4"
+                                className="relative max-sm:w-[90px] max-md:w-[100px] max-md:h-[300px] w-[180px] h-[600px] rounded-[20px] overflow-hidden drop-shadow-md/50 translate-y-2"
                                 style={{ perspective: '1000px' }}
                             >
                                 <AnimatePresence mode="wait">
@@ -143,7 +143,7 @@ const HeroSection = () => {
                                             src={images[currentImageIndex]}
                                             alt="Covenant Care"
                                             fill
-                                            className="object-cover object-[26%_10%]"
+                                            className="object-cover object-[25%_60%]"
                                         />
                                     </motion.div>
                                 </AnimatePresence>
