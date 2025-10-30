@@ -67,9 +67,9 @@ const CompanyGoals = () => {
                         <div className="relative w-full h-[300px] md:h-[45%]">
                             {/* Image */}
                             <div
-                                className="absolute inset-0 bg-cover bg-center"
+                                className="absolute inset-0 bg-cover bg-no-repeat bg-center xl:bg-[center_-90px]"
                                 style={{
-                                    backgroundImage: 'url(/assets/image/vision.png)'
+                                    backgroundImage: 'url(/assets/image/vision.jpg)'
                                 }}
                             />
                             <div className="absolute inset-0 bg-black opacity-20" />
