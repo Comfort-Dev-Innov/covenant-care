@@ -23,7 +23,6 @@ const menuItems: MenuItem[] = [
       { label: 'Our Core Values', href: '#core-values' },
       { label: 'Company Goals', href: '#company-goals' },
       { label: 'Satellites', href: '#satellites' },
-      { label: 'Management Team', href: '#management' },
     ]
   },
   { label: 'Plans/Benefits', href: '#plans', icon: IoCard },
