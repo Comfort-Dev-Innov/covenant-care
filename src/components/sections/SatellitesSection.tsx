@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import React, { useState } from "react";
-import Image from "next/image";
-import { satellitesData, Satellite } from "@/constants/satellitesData";
+import React, { useState } from 'react';
+import Image from 'next/image';
+import { satellitesData, Satellite } from '@/constants/satellitesData';
 import { motion } from 'framer-motion';
-import Button from "@/components/base/Button";
+import Button from '@/components/base/Button';
 
 interface SatelliteCardProps {
   satellite: Satellite;
@@ -25,7 +25,7 @@ const SatelliteCard: React.FC<SatelliteCardProps> = ({ satellite }) => {
 
       {/* Location Details Overlay - Anchored to Bottom */}
       <div className="relative object-bottom bottom-0 left-0 right-0 p-4 pt-8 satellite-overlay backdrop-blur-[3px] hover:backdrop-blur-[5px] transition-all duration-300">
-        <div className="flex items-start justify-between">
+        <div className="flex items-end  flex-row justify-between ">
           <div className="flex-1">
             {/* Address */}
             <div className="flex items-center gap-2 mb-2">
@@ -58,36 +58,60 @@ const SatelliteCard: React.FC<SatelliteCardProps> = ({ satellite }) => {
               {satellite.name}
             </h3>
 
+            {/* Contact Person */}
+            {satellite.contactPerson && (
+              <div className="flex items-center gap-2 mb-2">
+                <svg
+                  className="w-4 h-4 text-black"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M5.121 17.804A7 7 0 0112 14a7 7 0 016.879 3.804M15 10a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                </svg>
+                <span className="text-sm text-black font-inter">
+                  {satellite.contactPerson}
+                </span>
+              </div>
+            )}
+
             {/* Phone */}
-            <div className="flex items-center gap-2">
-              <svg
-                className="w-4 h-4 text-black"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                />
-              </svg>
-              <a
-                href={`tel:${satellite.phone?.replace(/\s/g, "") ?? ""}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm text-black hover:text-blue-600 hover:underline duration-300 transition-all font-inter"
-              >
-                {satellite.phone}
-              </a>
-            </div>
+            {satellite.phone && (
+              <div className="flex items-center gap-2">
+                <svg
+                  className="w-4 h-4 text-black"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                  />
+                </svg>
+                <a
+                  href={`tel:${satellite.phone.replace(/\s/g, '')}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-black hover:text-blue-600 hover:underline duration-300 transition-all font-inter"
+                >
+                  {satellite.phone}
+                </a>
+              </div>
+            )}
           </div>
 
           {/* Map Button */}
           {satellite.link && (
             <button
-              onClick={() => window.open(satellite.link ?? "", "_blank")}
+              onClick={() => window.open(satellite.link ?? '', '_blank')}
               className="cursor-pointer ml-4 w-10 h-10 bg-[var(--secondary)] rounded-lg flex items-center justify-center transition-colors"
             >
               <svg
@@ -151,7 +175,8 @@ const SatellitesSection: React.FC = () => {
             Satellites
           </h1>
           <p className="font-light font-inter text-black text-center text-[14px] md:text-[18px] mb-[36px] md:mb-[53px]">
-            Find a <strong className="!font-bold">Covenant Care</strong> satellite near you
+            Find a <strong className="!font-bold">Covenant Care</strong>{' '}
+            satellite near you
           </p>
         </motion.div>
 
@@ -179,7 +204,7 @@ const SatellitesSection: React.FC = () => {
               variant="filled"
               className="disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {isLoading ? "Loading..." : "See More Satellites"}
+              {isLoading ? 'Loading...' : 'See More Satellites'}
             </Button>
           </div>
         )}
