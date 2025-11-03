@@ -179,7 +179,7 @@ const SatellitesSection: React.FC = () => {
               variant="filled"
               className="disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {isLoading ? "Loading..." : "See More Satellites"}
+              {isLoading ? "Loading..." : "See More Branch Offices"}
             </Button>
           </div>
         )}
