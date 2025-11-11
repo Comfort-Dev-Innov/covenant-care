@@ -15,7 +15,7 @@ const HeroSection = () => {
     const [displayValue, setDisplayValue] = useState(0)
     const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
-    const TOTAL_MEMBERS = 342
+    const TOTAL_MEMBERS = 2788
     const ANIMATION_DURATION = 5.5 
     const WAIT_DURATION = 180000
 
